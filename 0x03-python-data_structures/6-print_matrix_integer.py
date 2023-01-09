@@ -7,7 +7,7 @@ def print_matrix_integer(matrix=[[]]):
     for i in matrix:
         # convert and combine each element into a string
         j = (" ".join(map(str, i)))
-        print("{}".format(j))
+        print("{:s}".format(j))
 
 
 # Stop script from CLI
