@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 
 if __name__ == '__main__':
-    from add_0 import add
+    import importlib
+    add = importlib.import_module('add_0')
     """Import add() from add_0 file"""
 
     a = 1
     b = 2
 
-    """Print the sum of a and b to stdout"""   
-    print('{} + {} = {}'.format(a, b, add(a,  b)))
+    """Print the sum of a and b to stdout"""
+    print('{} + {} = {}'.format(a, b, add.add(a,  b)))
