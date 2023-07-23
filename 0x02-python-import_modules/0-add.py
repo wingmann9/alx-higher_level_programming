@@ -1,17 +1,14 @@
 #!/usr/bin/python3
-"""import add function from add-0 filw"""
-import sys
-from add_0 import add
+
+def main(a, b):
+    """Print the sum of a and b to stdout"""
+    print('{} + {} = {}'.format(a, b, add(a,  b)))
 
 
-def main():
+if __name__ == '__main__':
+    from add_0 import add
+    """Import add() from add_0 file"""
 
     a = 1
     b = 2
-    print("{} + {} = {}".format(a, b, add(a, b)))
-    sys.exit()
-
-
-"""stop script from CLI"""
-if __name__ == "__main__":
-    main()
+    main(a, b)
