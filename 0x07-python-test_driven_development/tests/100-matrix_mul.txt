@@ -65,64 +65,8 @@ Integers and floats can be combined
 	>>> print(matrix_mul(m_a, m_b))
 	[[73.03999999999999, 84.5, 95.4], [166.58800000000002, 195.8, 223.74]]
 
-A minimum of two arguments must be provided. Otherwise, a TypeError is raised
-
-::
-
-	>>> print(matrix_mul()) # doctest: +NORMALIZE_WHITESPACE
-	Traceback (most recent call last):
-	TypeError: matrix_mul() missing 2 required positional arguments:
-	'm_a' and 'm_b'
-
-::
-
-	>>> print(matrix_mul()) # doctest: +NORMALIZE_WHITESPACE
-	Traceback (most recent call last):
-	TypeError: matrix_mul() missing 2 required positional arguments:
-	'm_a' and 'm_b'
-
-ValueErrors
+TypeErrors
 ===========
-
-If two matrices cannot be multiplied (ie. the row count of ``m_a`` is not equal to the column count in ``m_b``), a ValueError is raised.
-
-::
-
-	>>> m_a = [
-	... 	[1, 2],
-	... 	[3, 4],
-	... ]
-	>>> m_b = [
-	... 	[1, 2],
-	... 	[2, 3],
-	... 	[4, 5]
-	... ]
-	>>> print(matrix_mul(m_a, m_b))
-	Traceback (most recent call last):
-	ValueError: m_a and m_b can't be multiplied
-
-The parameters ``m_a`` and ``m_b`` cannot be empty. Otherwise, a ValueError is raised
-
-::
-
-	>>> print(matrix_mul([], [[1, 2]]))
-	Traceback (most recent call last):
-	ValueError: m_a can't be empty
-
-::
-
-	>>> print(matrix_mul([[1, 2]], [[]]))
-	Traceback (most recent call last):
-	ValueError: m_b can't be empty
-
-::
-
-	>>> print(matrix_mul([[]], []))
-	Traceback (most recent call last):
-	ValueError: m_a can't be empty
-
-Invalid Matrices
-================
 
 The parameters ``m_a`` and ``m_b`` must be lists. If either parameter is not a list, a TypeError is raised.
 
@@ -170,7 +114,33 @@ Not just any list - they *must* be lists of lists!
 	Traceback (most recent call last):
 	TypeError: m_a must be a list of lists
 
-And not just any list of lists - they *must* be lists of lists containing integers or floats!
+ValueErrors
+===========
+
+The parameters ``m_a`` and ``m_b`` cannot be empty. Otherwise, a ValueError is raised
+
+::
+
+	>>> print(matrix_mul([], [[1, 2]]))
+	Traceback (most recent call last):
+	ValueError: m_a can't be empty
+
+::
+
+	>>> print(matrix_mul([[1, 2]], [[]]))
+	Traceback (most recent call last):
+	ValueError: m_b can't be empty
+
+::
+
+	>>> print(matrix_mul([[]], []))
+	Traceback (most recent call last):
+	ValueError: m_a can't be empty
+
+Invalid Matrices
+================
+
+The variables ``m_a`` and ``m_b`` *must* be lists of lists containing integers or floats!
 
 ::
 
@@ -190,7 +160,7 @@ And not just any list of lists - they *must* be lists of lists containing intege
 	Traceback (most recent call last):
 	TypeError: m_a should contain only integers or floats
 
-Finally, the length of all rows in matrices ``m_a`` and ``m_b`` should be equivalent. Otherwise, a TypeError is raised.
+The length of all rows in matrices ``m_a`` and ``m_b`` should be equivalent. Otherwise, a TypeError is raised.
 
 ::
 
@@ -230,3 +200,20 @@ Finally, the length of all rows in matrices ``m_a`` and ``m_b`` should be equiva
 	>>> print(matrix_mul(m_a, m_b))
 	Traceback (most recent call last):
 	TypeError: each row of m_a must be of the same size
+
+Finally, if two matrices cannot be multiplied (ie. the row count of ``m_a`` is not equal to the column count in ``m_b``), a ValueError is raised.
+
+::
+
+	>>> m_a = [
+	... 	[1, 2],
+	... 	[3, 4],
+	... ]
+	>>> m_b = [
+	... 	[1, 2],
+	... 	[2, 3],
+	... 	[4, 5]
+	... ]
+	>>> print(matrix_mul(m_a, m_b))
+	Traceback (most recent call last):
+	ValueError: m_a and m_b can't be multiplied
