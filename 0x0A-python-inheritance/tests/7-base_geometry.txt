@@ -57,15 +57,7 @@ Test case #4: A test case with a NaN value
     ...     print("[{}] {}".format(e.__class__.__name__, e))
     [TypeError] nan must be an integer
 
-Test case #5: A test case with a boolean value
-
-    >>> try:
-    ...     bg.integer_validator("name", True)
-    ... except Exception as e:
-    ...     print("[{}] {}".format(e.__class__.__name__, e))
-    [TypeError] name must be an integer
-
-Test case #6: A test case with a tuple value
+Test case #5: A test case with a tuple value
 
     >>> try:
     ...     bg.integer_validator("name", (4, ))
@@ -73,7 +65,7 @@ Test case #6: A test case with a tuple value
     ...     print("[{}] {}".format(e.__class__.__name__, e))
     [TypeError] name must be an integer
 
-Test case #7: A test case with a string value
+Test case #6: A test case with a string value
 
     >>> try:
     ...     bg.integer_validator("name", 'Monty Python')
@@ -81,7 +73,7 @@ Test case #7: A test case with a string value
     ...     print("[{}] {}".format(e.__class__.__name__, e))
     [TypeError] name must be an integer
 
-Test case #8: A test case with a none value
+Test case #7: A test case with a none value
 
     >>> try:
     ...     bg.integer_validator("name", None)
@@ -89,7 +81,7 @@ Test case #8: A test case with a none value
     ...     print("[{}] {}".format(e.__class__.__name__, e))
     [TypeError] name must be an integer
 
-Test case #9: A test case with a list value
+Test case #8: A test case with a list value
 
     >>> try:
     ...     bg.integer_validator("name", [])
@@ -97,7 +89,7 @@ Test case #9: A test case with a list value
     ...     print("[{}] {}".format(e.__class__.__name__, e))
     [TypeError] name must be an integer
 
-Test case #10: A test case with a dictionary value
+Test case #9: A test case with a dictionary value
 
     >>> try:
     ...     bg.integer_validator("name", {3, 4})
@@ -105,7 +97,7 @@ Test case #10: A test case with a dictionary value
     ...     print("[{}] {}".format(e.__class__.__name__, e))
     [TypeError] name must be an integer
 
-Test case #11: A test case with a class value
+Test case #10: A test case with a class value
 
     >>> try:
     ...     bg.integer_validator("name", object)
@@ -113,27 +105,27 @@ Test case #11: A test case with a class value
     ...     print("[{}] {}".format(e.__class__.__name__, e))
     [TypeError] name must be an integer
 
-Test case #12: A test case without value
+Test case #11: A test case without value
 
     >>> try:
     ...     bg.integer_validator("name")
     ... except Exception as e:
     ...     print("[{}] {}".format(e.__class__.__name__, e))
-    [TypeError] integer_validator() missing 1 required positional argument: 'value'
+    [TypeError] BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
 
-Test case #13: A test case without value
+Test case #12: A test case without value
 
     >>> try:
     ...     bg.integer_validator()
     ... except Exception as e:
     ...     print("[{}] {}".format(e.__class__.__name__, e))
-    [TypeError] integer_validator() missing 2 required positional arguments: 'name' and 'value'
+    [TypeError] BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
 
 Section // Value Errors
 =========================
 
-Test case #14: A test case with zero as value
+Test case #13: A test case with zero as value
 
     >>> try:
     ...     bg.integer_validator("age", 0)
@@ -141,7 +133,7 @@ Test case #14: A test case with zero as value
     ...     print("[{}] {}".format(e.__class__.__name__, e))
     [ValueError] age must be greater than 0
 
-Test case #15: A test case with a value less than zero
+Test case #14: A test case with a value less than zero
 
     >>> try:
     ...     bg.integer_validator("distance", -4)
@@ -153,7 +145,7 @@ Test case #15: A test case with a value less than zero
 Section // General Errors
 =========================
 
-Test case #16: A test case with a not available method
+Test case #15: A test case with a not available method
 
     >>> try:
     ...     bg.area()
